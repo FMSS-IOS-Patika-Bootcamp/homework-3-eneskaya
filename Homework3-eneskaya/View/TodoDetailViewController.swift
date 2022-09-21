@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoDetailViewController: UIViewController {
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var todoText: UILabel!
     var selectedIsChecked : Bool = false
     var selectedText = ""
+    var selectedTodo = TodoEntity()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +32,7 @@ class TodoDetailViewController: UIViewController {
     if segue.identifier == "detailToTodoVC"{
     let destinationVC = segue.destination as! TabBarViewController // artık bu yapıya ait tüm
         destinationVC.detailInfo = selectedIsChecked
+        destinationVC.updateItem(item: selectedTodo)
        
     }}
 

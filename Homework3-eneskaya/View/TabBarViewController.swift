@@ -6,36 +6,110 @@
 //
 
 import UIKit
+import CoreData
 
 class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var checkmarkImage: UIImageView!
     @IBOutlet weak var todoLabel: UILabel!
-    
+    var List: [NSManagedObject] = []
+    var choosenTodoItem = TodoEntity()
     var choosenTodo = ""
     var choosenisChecked : Bool = false
     var detailInfo = false
-    var todos: [String] = ["Don't Forget Eat","Every Night Sleep", "Take a Shower", "Go to Home"]
+    var todos = [TodoEntity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "CoreData To Do List"
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 80
+        
+        getAllItem()
 
         
         // Do any additional setup after loading the view.
     }
     
+  
+    
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-       
         
+        
+
+    }
+   
+
+    
+    func getAllItem() {
+        
+        todos.removeAll(keepingCapacity: false)
+            
+          do {
+            
+            todos = try context.fetch(TodoEntity.fetchRequest())
+            DispatchQueue.main.async {
+               
+                self.tableView.reloadData()
+            }
+           
+        }
+        catch {
+          //error
+        }
+    }
+    
+    func createAnItem(name: String) {
+        let newItem = TodoEntity(context: context)
+        newItem.todo = name
+        newItem.created = Date()
+        newItem.isChecked = false
+        do{
+            try context.save()
+        }
+        catch{
+            // error
+        }
+    }
+    
+    func updateItem(item: TodoEntity){
+        
+        item.isChecked = true
+        
+        do{
+            try context.save()
+        }
+        catch{
+            // error
+        }
+        
+     /*
+        var sampleCheckmarkfillImage = UIImage(named: "checkmarkfill.png")
+        var sampleCheckmarkImage = UIImage(named: "checkmark.png")
+       //let jpegfillImageData = sampleCheckmarkfillImage?.jpegData(compressionQuality: 1.0)
+        //let jpegImageData = sampleCheckmarkImage?.jpegData(compressionQuality: 1.0)
+        let pngFillImageData  = sampleCheckmarkfillImage?.pngData()
+        let pngImageData  = sampleCheckmarkImage?.pngData()
+        
+        
+        let entityName =  NSEntityDescription.entity(forEntityName: "TodoModel", in: context)!
+        let image = NSManagedObject(entity: entityName, insertInto: context)
+        //image.setValue(pngFillImageData, forKey: "img")
+        do {
+          try context.save()
+        } catch let error as NSError {
+          print("Could not save. \(error), \(error.userInfo)")
+        }
+      */
         
     }
+    
     @IBAction func addButonClicked(_ sender: Any) {
         
     }
@@ -52,11 +126,35 @@ class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let model = todos[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell",for: indexPath) as! TodoCell
         
-        cell.todoLabel.text = todos[indexPath.row]
+        cell.todoLabel.text = model.todo
         cell.checkmarkImage.image = UIImage(named: "checkmark.png")
-  
+        
+        cell.isChecked = model.isChecked
+        
+        if cell.isChecked == true {
+          
+            cell.checkmarkImage.image = UIImage(named: "checkmarkfill.png")
+           
+        }
+        else{
+           
+            cell.checkmarkImage.image = UIImage(named: "checkmark.png")
+           
+        }
+        
+        if indexPath.row % 2 == 0 {
+            cell.contentView.backgroundColor = .lightGray
+        }
+        else{
+            cell.contentView.backgroundColor = .white
+        }
+        
+        
+        
         
         return cell
     }
@@ -67,15 +165,15 @@ class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! TodoCell
-        
-        self.choosenTodo = todos[indexPath.row]
+        let model = todos[indexPath.row]
+        self.choosenTodo = model.todo ?? "todo"
         
         choosenisChecked = cell.isChecked
+        choosenTodoItem = model
         
         
-        
-      
-            if cell.isChecked == false {
+      /*
+             if cell.isChecked == false {
                
                  cell.checkmarkImage.image = UIImage(named: "checkmarkfill.png")
                 cell.isChecked = true
@@ -85,11 +183,10 @@ class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewData
                  cell.checkmarkImage.image = UIImage(named: "checkmark.png")
                  cell.isChecked = false
              }
-        
-      
-        
-       
+        */
         performSegue(withIdentifier: "toTodoDetailVC", sender: nil)
+    
+    
     }
         
     
@@ -98,7 +195,7 @@ class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewData
         let destinationVC = segue.destination as! TodoDetailViewController // artık bu yapıya ait tüm
             destinationVC.selectedText = choosenTodo
             destinationVC.selectedIsChecked = choosenisChecked
-        
+            destinationVC.selectedTodo = choosenTodoItem
             
     
             

@@ -10,7 +10,7 @@ import UIKit
 class TodoViewController: UIViewController {
 
     @IBOutlet weak var addTodoText: UITextField!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -19,11 +19,12 @@ class TodoViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // segue başlamadan önce çalışacak fonksiyon
-    let newTodo = addTodoText.text!
+   
     if segue.identifier == "toTodoView"{
     // değişken gibi işleme tabi tutmak için yapıldı.
     let destinationVC = segue.destination as! TabBarViewController // artık bu yapıya ait tüm özelliklere erişim mevcut hale geldi.
-        destinationVC.todos.append(newTodo)  // ikinci ekrandaki name değişkeni ile birinci ekrandaki username değeri eşleştirildi.
+        let newTodo = addTodoText.text!
+        destinationVC.createAnItem(name: newTodo) // ikinci ekrandaki name değişkeni ile birinci ekrandaki username değeri eşleştirildi.
         
     }}
 
