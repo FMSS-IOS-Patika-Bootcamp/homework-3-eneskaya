@@ -26,4 +26,25 @@ class Webservice{
             }
         }.resume()
     }
+    
+/*    func downloadPhotos(url: URL, completion: @escaping ([PhotoModel]?) -> ()){
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil)
+            } else if let data = data {
+                
+                let photoList = try? JSONDecoder().decode([PhotoModel].self, from: data)
+                print(photoList ?? "nil")
+                
+                if let photoList = photoList {
+                    completion(photoList)
+                }
+                
+            }
+        }.resume()
+    }
+    
+    */
+    
 }

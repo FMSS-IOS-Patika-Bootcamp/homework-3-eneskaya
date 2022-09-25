@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A84D4C428DA477D00D1B5A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D4C328DA477D00D1B5A9 /* AppDelegate.swift */; };
 		1A84D4C628DA477D00D1B5A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D4C528DA477D00D1B5A9 /* SceneDelegate.swift */; };
-		1A84D4C828DA477D00D1B5A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D4C728DA477D00D1B5A9 /* ViewController.swift */; };
 		1A84D4CB28DA477D00D1B5A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A84D4C928DA477D00D1B5A9 /* Main.storyboard */; };
 		1A84D4CD28DA477F00D1B5A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A84D4CC28DA477F00D1B5A9 /* Assets.xcassets */; };
 		1A84D4D028DA477F00D1B5A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A84D4CE28DA477F00D1B5A9 /* LaunchScreen.storyboard */; };
@@ -25,13 +24,18 @@
 		1A84D4FD28DDDB0E00D1B5A9 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D4FC28DDDB0E00D1B5A9 /* PostModel.swift */; };
 		1A84D4FF28DDE14F00D1B5A9 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D4FE28DDE14F00D1B5A9 /* Webservice.swift */; };
 		1A84D50328DFFF3F00D1B5A9 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D50228DFFF3F00D1B5A9 /* PostViewModel.swift */; };
+		1A84D50528E00DB300D1B5A9 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D50428E00DB300D1B5A9 /* PhotoCollectionViewCell.swift */; };
+		1A84D50828E02FFB00D1B5A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1A84D50728E02FFB00D1B5A9 /* Kingfisher */; };
+		1A84D50A28E03AE900D1B5A9 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D50928E03AE900D1B5A9 /* PhotosViewController.swift */; };
+		1A84D50C28E03DC600D1B5A9 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D50B28E03DC600D1B5A9 /* PhotoModel.swift */; };
+		1A84D50E28E0555200D1B5A9 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D50D28E0555200D1B5A9 /* PhotoViewModel.swift */; };
+		1A84D51128E06D9100D1B5A9 /* PhotoTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D51028E06D9100D1B5A9 /* PhotoTabModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A84D4C028DA477D00D1B5A9 /* Homework3-eneskaya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homework3-eneskaya.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A84D4C328DA477D00D1B5A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A84D4C528DA477D00D1B5A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1A84D4C728DA477D00D1B5A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A84D4CA28DA477D00D1B5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A84D4CC28DA477F00D1B5A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A84D4CF28DA477F00D1B5A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +52,11 @@
 		1A84D4FC28DDDB0E00D1B5A9 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		1A84D4FE28DDE14F00D1B5A9 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		1A84D50228DFFF3F00D1B5A9 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		1A84D50428E00DB300D1B5A9 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A84D50928E03AE900D1B5A9 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		1A84D50B28E03DC600D1B5A9 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		1A84D50D28E0555200D1B5A9 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		1A84D51028E06D9100D1B5A9 /* PhotoTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTabModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A84D50828E02FFB00D1B5A9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +94,6 @@
 				1A84D4FB28DDDA7B00D1B5A9 /* Service */,
 				1A84D4FA28DDDA6A00D1B5A9 /* ViewModel */,
 				1A84D4F928DDDA6000D1B5A9 /* Model */,
-				1A84D4EC28DB110B00D1B5A9 /* TodoListItem */,
 				1A84D4DA28DA68E400D1B5A9 /* Support */,
 				1A84D4D928DA68D800D1B5A9 /* View */,
 				1A84D4C928DA477D00D1B5A9 /* Main.storyboard */,
@@ -104,6 +113,8 @@
 				1A84D4DF28DA81BD00D1B5A9 /* TodoDetailViewController.swift */,
 				1A84D4F528DDD23E00D1B5A9 /* PostViewController.swift */,
 				1A84D4F728DDD32100D1B5A9 /* PostCell.swift */,
+				1A84D50428E00DB300D1B5A9 /* PhotoCollectionViewCell.swift */,
+				1A84D50928E03AE900D1B5A9 /* PhotosViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,16 +124,8 @@
 			children = (
 				1A84D4C328DA477D00D1B5A9 /* AppDelegate.swift */,
 				1A84D4C528DA477D00D1B5A9 /* SceneDelegate.swift */,
-				1A84D4C728DA477D00D1B5A9 /* ViewController.swift */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		1A84D4EC28DB110B00D1B5A9 /* TodoListItem */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TodoListItem;
 			sourceTree = "<group>";
 		};
 		1A84D4F928DDDA6000D1B5A9 /* Model */ = {
@@ -131,6 +134,8 @@
 				1A84D4E828DB10EF00D1B5A9 /* TodoEntity+CoreDataClass.swift */,
 				1A84D4E928DB10EF00D1B5A9 /* TodoEntity+CoreDataProperties.swift */,
 				1A84D4FC28DDDB0E00D1B5A9 /* PostModel.swift */,
+				1A84D51028E06D9100D1B5A9 /* PhotoTabModel.swift */,
+				1A84D50F28E06D7200D1B5A9 /* Entity */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1A84D50228DFFF3F00D1B5A9 /* PostViewModel.swift */,
+				1A84D50D28E0555200D1B5A9 /* PhotoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +155,14 @@
 				1A84D4FE28DDE14F00D1B5A9 /* Webservice.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		1A84D50F28E06D7200D1B5A9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1A84D50B28E03DC600D1B5A9 /* PhotoModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +181,9 @@
 			dependencies = (
 			);
 			name = "Homework3-eneskaya";
+			packageProductDependencies = (
+				1A84D50728E02FFB00D1B5A9 /* Kingfisher */,
+			);
 			productName = "Homework3-eneskaya";
 			productReference = 1A84D4C028DA477D00D1B5A9 /* Homework3-eneskaya.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 1A84D4B728DA477D00D1B5A9;
+			packageReferences = (
+				1A84D50628E02FFB00D1B5A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1A84D4C128DA477D00D1B5A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,18 +242,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A84D50C28E03DC600D1B5A9 /* PhotoModel.swift in Sources */,
 				1A84D50328DFFF3F00D1B5A9 /* PostViewModel.swift in Sources */,
+				1A84D50A28E03AE900D1B5A9 /* PhotosViewController.swift in Sources */,
 				1A84D4D828DA68D300D1B5A9 /* TabBarViewController.swift in Sources */,
 				1A84D4EA28DB10EF00D1B5A9 /* TodoEntity+CoreDataClass.swift in Sources */,
-				1A84D4C828DA477D00D1B5A9 /* ViewController.swift in Sources */,
 				1A84D4C428DA477D00D1B5A9 /* AppDelegate.swift in Sources */,
 				1A84D4DC28DA6DA100D1B5A9 /* TodoCell.swift in Sources */,
 				1A84D4FD28DDDB0E00D1B5A9 /* PostModel.swift in Sources */,
 				1A84D4DE28DA7BE600D1B5A9 /* TodoViewController.swift in Sources */,
 				1A84D4E328DB0A7300D1B5A9 /* TodoModel.xcdatamodeld in Sources */,
+				1A84D50528E00DB300D1B5A9 /* PhotoCollectionViewCell.swift in Sources */,
 				1A84D4FF28DDE14F00D1B5A9 /* Webservice.swift in Sources */,
 				1A84D4C628DA477D00D1B5A9 /* SceneDelegate.swift in Sources */,
 				1A84D4EB28DB10EF00D1B5A9 /* TodoEntity+CoreDataProperties.swift in Sources */,
+				1A84D50E28E0555200D1B5A9 /* PhotoViewModel.swift in Sources */,
+				1A84D51128E06D9100D1B5A9 /* PhotoTabModel.swift in Sources */,
 				1A84D4E028DA81BD00D1B5A9 /* TodoDetailViewController.swift in Sources */,
 				1A84D4F628DDD23E00D1B5A9 /* PostViewController.swift in Sources */,
 				1A84D4F828DDD32100D1B5A9 /* PostCell.swift in Sources */,
@@ -454,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A84D50628E02FFB00D1B5A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A84D50728E02FFB00D1B5A9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A84D50628E02FFB00D1B5A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1A84D4E128DB0A7300D1B5A9 /* TodoModel.xcdatamodeld */ = {

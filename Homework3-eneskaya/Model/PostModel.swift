@@ -17,4 +17,4 @@ struct PostElement: Codable {
     }
 }
 
-typealias Welcome = [PostElement]
+typealias WelcomePost = [PostElement]
