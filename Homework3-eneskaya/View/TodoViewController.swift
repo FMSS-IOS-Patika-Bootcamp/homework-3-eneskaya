@@ -5,10 +5,9 @@
 //  Created by Enes Kaya on 21.09.2022.
 //
 
-
 import UIKit
 
-// Todo view controller
+// Todo View Controller
 class TodoViewController: UIViewController {
 
     @IBOutlet weak var addTodoText: UITextField!
@@ -17,17 +16,16 @@ class TodoViewController: UIViewController {
         super.viewDidLoad()
        
 
-        
+       
+            
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // segue başlamadan önce çalışacak fonksiyon
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
    
     if segue.identifier == "toTodoView"{
-    
-    let destinationVC = segue.destination as! TabBarViewController /
+    let destinationVC = segue.destination as! TabBarViewController
         let newTodo = addTodoText.text!
         destinationVC.createAnItem(name: newTodo)
-        
     }}
 
     @IBAction func saveTodoButtonClicked(_ sender: Any) {
