@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+// Todo Detail View
+
 class TodoDetailViewController: UIViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -22,15 +24,15 @@ class TodoDetailViewController: UIViewController {
        
         
 
-        // Do any additional setup after loading the view.
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         todoText.text = selectedText
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // segue başlamadan önce çalışacak fonksiyon
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "detailToTodoVC"{
-    let destinationVC = segue.destination as! TabBarViewController // artık bu yapıya ait tüm
+    let destinationVC = segue.destination as! TabBarViewController
         destinationVC.detailInfo = selectedIsChecked
         destinationVC.updateItem(item: selectedTodo)
        

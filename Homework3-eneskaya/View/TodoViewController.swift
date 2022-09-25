@@ -5,8 +5,10 @@
 //  Created by Enes Kaya on 21.09.2022.
 //
 
+
 import UIKit
 
+// Todo view controller
 class TodoViewController: UIViewController {
 
     @IBOutlet weak var addTodoText: UITextField!
@@ -15,23 +17,23 @@ class TodoViewController: UIViewController {
         super.viewDidLoad()
        
 
-        // Do any additional setup after loading the view.
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // segue başlamadan önce çalışacak fonksiyon
    
     if segue.identifier == "toTodoView"{
-    // değişken gibi işleme tabi tutmak için yapıldı.
-    let destinationVC = segue.destination as! TabBarViewController // artık bu yapıya ait tüm özelliklere erişim mevcut hale geldi.
+    
+    let destinationVC = segue.destination as! TabBarViewController /
         let newTodo = addTodoText.text!
-        destinationVC.createAnItem(name: newTodo) // ikinci ekrandaki name değişkeni ile birinci ekrandaki username değeri eşleştirildi.
+        destinationVC.createAnItem(name: newTodo)
         
     }}
 
     @IBAction func saveTodoButtonClicked(_ sender: Any) {
        
         
-        //todos.append(newTodo.text!)
+       
         
         performSegue(withIdentifier: "toTodoView", sender: nil)
         

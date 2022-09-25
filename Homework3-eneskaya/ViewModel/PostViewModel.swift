@@ -7,6 +7,7 @@
 
 import Foundation
 
+//View model for post feed tab
 struct PostListViewModel {
 
     let postList : [PostElement]

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//post model struct
 struct PostElement: Codable {
     let userID, id: Int
     let title, body: String

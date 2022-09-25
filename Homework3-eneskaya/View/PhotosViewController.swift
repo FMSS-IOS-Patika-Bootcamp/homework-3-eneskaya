@@ -8,43 +8,43 @@
 import UIKit
 import Kingfisher
 
-class PhotosViewController: UIViewController {
+
+//Photo view controller
+class PhotosViewController: UIViewController{
     
   
     
 
     @IBOutlet weak var collectionView: UICollectionView!
     private let photoCellViewModel = PhotoViewModel()
-    private var items: [PhotoCollectionCellViewModel] = []
+    private var imageArr: [PhotoCollectionCellViewModel] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        setupUI()
-        photoCellViewModel.viewDelegate = self
+        photoCellViewModel.photoViewDelegate = self
         photoCellViewModel.didViewLoad()
         
     }
 }
 
-private extension PhotosViewController {
+extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     
-    
-    func setupUI() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        registerCell()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.width - 40) / 3 , height: (collectionView.frame.height - 40) / 5)
+        
     }
-    func registerCell() {
-        collectionView.register(.init(nibName: "AlbumCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AlbumCollectionViewCell")
-    }
+
 }
 
 
-extension PhotosViewController : AlbumViewModelViewProtocol {
-    func didCellItemFetch(_ items: [PhotoCollectionCellViewModel]) {
-        self.items = items
+
+extension PhotosViewController : PhotosViewModelViewPr {
+    func fetchPhoto(_ items: [PhotoCollectionCellViewModel]) {
+        self.imageArr = items
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
@@ -55,27 +55,19 @@ extension PhotosViewController : AlbumViewModelViewProtocol {
 extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return imageArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
         
-        cell.imageView.kf.setImage(with: URL(string: items[indexPath.row].image!))
+        cell.imageView.kf.setImage(with: URL(string: imageArr[indexPath.row].image!))
         return cell
     }
     
 }
 
 
-extension PhotosViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width - 40) / 4 , height: (collectionView.frame.height - 40) / 7 )
-        
-    }
-
-}
 
 

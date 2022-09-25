@@ -11,7 +11,7 @@ import CoreData
 
 
 extension TodoEntity {
-
+    //core data todo fetch function
     @nonobjc public class func fetchRequest() -> NSFetchRequest<TodoEntity> {
         return NSFetchRequest<TodoEntity>(entityName: "TodoEntity")
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+//photo view cell
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!

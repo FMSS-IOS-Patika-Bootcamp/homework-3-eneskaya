@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+//tab bar view controller
 class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -89,24 +90,7 @@ class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewData
             // error
         }
         
-     /*
-        var sampleCheckmarkfillImage = UIImage(named: "checkmarkfill.png")
-        var sampleCheckmarkImage = UIImage(named: "checkmark.png")
-       //let jpegfillImageData = sampleCheckmarkfillImage?.jpegData(compressionQuality: 1.0)
-        //let jpegImageData = sampleCheckmarkImage?.jpegData(compressionQuality: 1.0)
-        let pngFillImageData  = sampleCheckmarkfillImage?.pngData()
-        let pngImageData  = sampleCheckmarkImage?.pngData()
-        
-        
-        let entityName =  NSEntityDescription.entity(forEntityName: "TodoModel", in: context)!
-        let image = NSManagedObject(entity: entityName, insertInto: context)
-        //image.setValue(pngFillImageData, forKey: "img")
-        do {
-          try context.save()
-        } catch let error as NSError {
-          print("Could not save. \(error), \(error.userInfo)")
-        }
-      */
+   
         
     }
     
@@ -171,19 +155,7 @@ class TabBarViewController: UIViewController,UITableViewDelegate,UITableViewData
         choosenisChecked = cell.isChecked
         choosenTodoItem = model
         
-        
-      /*
-             if cell.isChecked == false {
-               
-                 cell.checkmarkImage.image = UIImage(named: "checkmarkfill.png")
-                cell.isChecked = true
-             }
-             else{
-                
-                 cell.checkmarkImage.image = UIImage(named: "checkmark.png")
-                 cell.isChecked = false
-             }
-        */
+     
         performSegue(withIdentifier: "toTodoDetailVC", sender: nil)
     
     

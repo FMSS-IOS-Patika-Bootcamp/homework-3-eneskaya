@@ -7,6 +7,8 @@
 
 import UIKit
 
+// Post feed cell 
+
 class PostCell: UITableViewCell {
     @IBOutlet weak var userIdText: UILabel!
     @IBOutlet weak var idText: UILabel!
@@ -15,16 +17,15 @@ class PostCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         bodyText.layoutMargins.bottom = 200
-        //cellLayoutMarginsFollowReadableWidth = false
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+       
     }
 
 }

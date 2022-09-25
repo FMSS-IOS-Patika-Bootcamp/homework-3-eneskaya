@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+//coredata todo entity class
 @objc(TodoEntity)
 public class TodoEntity: NSManagedObject {
 

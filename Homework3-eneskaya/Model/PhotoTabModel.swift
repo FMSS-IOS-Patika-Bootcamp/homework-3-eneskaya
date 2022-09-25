@@ -12,7 +12,7 @@ protocol PhotoModelPr: AnyObject {
     func getData(_ isSuccess: Bool)
 }
 
-
+// photo model struct
 class photoModel {
     
     
