@@ -18,9 +18,9 @@
 
 ### Usage
 
-Do not forget to install [KingFisher]
+Do not forget to install [KingFisher](https://github.com/onevcat/Kingfisher)
 
 #### Photos
 
-<img src="https://raw.githubusercontent.com/FMSS-IOS-Patika-Bootcamp/homework2-eneskaya/main/Images/ss1.png" width="250" hight="250" /> <img src="https://raw.githubusercontent.com/FMSS-IOS-Patika-Bootcamp/homework2-eneskaya/main/Images/ss2.png" width="250" hight="250" /> <img src="https://raw.githubusercontent.com/FMSS-IOS-Patika-Bootcamp/homework2-eneskaya/main/Images/ss3.png" width="250" hight="250" /> 
+<img src="https://github.com/FMSS-IOS-Patika-Bootcamp/homework-3-eneskaya/blob/main/Images/ss1.png" width="250" hight="250" /> <img src="https://github.com/FMSS-IOS-Patika-Bootcamp/homework-3-eneskaya/blob/main/Images/ss2.png" width="250" hight="250" /> <img src="https://github.com/FMSS-IOS-Patika-Bootcamp/homework-3-eneskaya/blob/main/Images/ss3.png" width="250" hight="250" /> 
 
